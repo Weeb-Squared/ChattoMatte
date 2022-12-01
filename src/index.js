@@ -5,15 +5,13 @@ import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Home from "./pages/Home"
-import Login from './pages/Login';
+import Login from './pages/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
     <Routes>
-        <Route exact path="/" element={<Home/>}> </Route>
-        <Route exact path="/login" element={<Login/>}></Route>
+        <Route exact path="/" element={<Login/>}> </Route>
     </Routes>    
     </Router>
 );

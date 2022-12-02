@@ -1,0 +1,39 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginForm {
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: xx-large;
+}
+
+.formLabel {
+    width: 100%;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 10px rgb(250, 155, 171);
+}
+
+.formControl:hover {
+    box-shadow: 0 0 8px 8px rgba(255, 255, 255, 0.2);
+}
+
+.formButton {
+    min-height: 4vh;
+    width: 80%;
+    background: linear-gradient(90deg, rgb(0,0,128), rgb(0,0,196));
+    border-radius: 12.5px;
+    font-weight: bolder;
+}
+
+.formButton:hover {
+    box-shadow: 0 0 8px 8px rgba(255,255,255, .2);
+}

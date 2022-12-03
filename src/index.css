@@ -9,6 +9,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
     scroll-behavior: smooth;
+    color: white;
 }
 
 #root {

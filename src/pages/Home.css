@@ -1,7 +1,12 @@
+/*
+This css file covers the Home page layout and form styling and general page styling 
+*/
+
 #componentsBox {
     display: flex;
     flex-wrap: nowrap;
 }
+
 #componentsBox > div:first-child {
     background: linear-gradient(90deg, #009FFD, #2A2A72);
     height: 200vh;
@@ -12,7 +17,6 @@
 }
 
 #componentsBox > div:last-child {
-    
     width: 100%;
     height: 200vh;
     background: linear-gradient(90deg, #2A2A72, #030369);
@@ -23,11 +27,9 @@
 #emptySpace, #agreement {
     height: 50%;
     width: 100%;
-    background: linear-gradient(90deg, #2A2A72, #030369);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
 }
 
 .loginForm, .registerForm {
@@ -44,7 +46,6 @@
     width: 100%;
     font-size: 30px;
     font-weight: 700;
-    color: white;
     margin-bottom: 0;
     text-shadow: 1px 1px 10px rgb(250, 155, 171);
 }
@@ -67,7 +68,6 @@
 
 p {
     font-size: large;
-    color: white;
 }
 
 a {

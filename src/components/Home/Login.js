@@ -8,15 +8,24 @@ import { Link } from "react-router-dom";
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.SubmitEvent = this.SubmitEvent.bind(this);
+        this.submitEvent = this.submitEvent.bind(this);
     }
 
+    /**
+     * scrollEvent - method called every time user click on link to see the register form
+     * 
+     * @param {event} event 
+     */
     scrollEvent(e) {
         window.scrollTo(0, document.body.scrollHeight);
     }
 
-    SubmitEvent(event) {
-        console.log(event);
+    /**
+     * submitEvent - method used after user clicks login button
+     * 
+     * @param {event} event 
+     */
+    submitEvent(event) {
         const formNodes = document.querySelectorAll(".loginForm > input");
         console.log(formNodes);
         event.preventDefault();
@@ -24,7 +33,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <Form onSubmit={this.SubmitEvent} id="login" className="loginForm">
+            <Form onSubmit={this.submitEvent} id="login" className="loginForm">
                 <Form.Label className="formLabel"> Username: </Form.Label>
                 <Form.Control type="text" className="formControl" /> <br />
                 <Form.Label className="formLabel">Password:</Form.Label>

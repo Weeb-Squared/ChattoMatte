@@ -8,14 +8,30 @@ import { Link } from "react-router-dom";
 
 class Register extends React.Component {
 
+    /**
+     * scrollEvent - method called every time user clicks on link to see login form or agreement
+     * 
+     * @param {event} event
+     */
     scrollEvent(e) {
         if (e.currentTarget.href.includes("login")) window.scrollTo(0, 0);
         else window.scrollTo(document.documentElement.scrollWidth, document.body.scrollHeight);
     }
 
+    /**
+     * submitEvent - method used after user clicks login button
+     * 
+     * @param {event} event 
+     */
+    submitEvent(event) {
+        const formNodes = document.querySelectorAll(".registerForm > input");
+        console.log(formNodes);
+        event.preventDefault();
+    }
+
     render() {
         return (
-            <Form id="register" className='registerForm'>
+            <Form onSubmit={this.submitEvent} id="register" className='registerForm'>
                 <Form.Label className="formLabel"> Username: </Form.Label>
                 <Form.Control type="text" className="formControl" /> <br />
                 <Form.Label className="formLabel">E-mail:</Form.Label>

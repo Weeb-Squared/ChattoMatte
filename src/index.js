@@ -6,13 +6,13 @@ import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Login from './pages/Home';
+import Home from './pages/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
     <Routes>
-        <Route exact path="/" element={<Login/>}> </Route>
+        <Route exact path="/" element={<Home/>}> </Route>
     </Routes>    
     </Router>
 );

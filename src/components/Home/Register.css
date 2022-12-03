@@ -1,0 +1,24 @@
+.registerForm {
+    height: 50%;
+    width: 40vh;
+}
+
+#agreement {
+    width: 100%;
+    font-size: large;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+#agreement > :first-child {
+    margin: 10px;
+}
+
+#agreement > :last-child {
+    color: pink;
+    text-decoration: none;
+}
+#agreement > :last-child:hover {
+    text-shadow: 0 0 3px white;
+}

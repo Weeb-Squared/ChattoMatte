@@ -1,10 +1,38 @@
 #componentsBox {
+    display: flex;
+    flex-wrap: nowrap;
+}
+#componentsBox > div:first-child {
+    background: linear-gradient(90deg, #009FFD, #2A2A72);
     height: 200vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#componentsBox > div:last-child {
+    
+    width: 100%;
+    height: 200vh;
+    background: linear-gradient(90deg, #2A2A72, #030369);
+    position: absolute;
+    margin-left: 100%;
+}
+
+#emptySpace, #agreement {
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(90deg, #2A2A72, #030369);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
 .loginForm, .registerForm {
     height: 50%;
-    width: 40vh;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;

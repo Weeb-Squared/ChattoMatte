@@ -2,6 +2,7 @@ import React from "react";
 
 import Login from '../components/Home/Login';
 import Register from '../components/Home/Register';
+import Agreement from '../components/Home/Agreement';
 import "./Home.css"
 
 class Home extends React.Component {
@@ -9,8 +10,14 @@ class Home extends React.Component {
     render() {
         return (
             <div id="componentsBox">
-                <Login />
-                <Register />
+                <div>
+                    <Login />
+                    <Register />
+                </div>
+                <div>
+                    <div id="emptySpace"></div>
+                    <Agreement />
+                </div>
             </div>
         )
     }

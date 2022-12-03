@@ -3,10 +3,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     font-family: 'Helvetica';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: linear-gradient(90deg, #009FFD, #2A2A72);
     overflow: hidden;
     scroll-behavior: smooth;
+}
+
+#root {
+    width: 100%;
 }

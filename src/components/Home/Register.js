@@ -26,6 +26,7 @@ class Register extends React.Component {
     submitEvent(event) {
         const formNodes = document.querySelectorAll(".registerForm > input");
         console.log(formNodes);
+
         event.preventDefault();
     }
 
@@ -33,13 +34,13 @@ class Register extends React.Component {
         return (
             <Form onSubmit={this.submitEvent} id="register" className='registerForm'>
                 <Form.Label className="formLabel"> Username: </Form.Label>
-                <Form.Control type="text" className="formControl" /> <br />
+                <Form.Control type="text" /> <br />
                 <Form.Label className="formLabel">E-mail:</Form.Label>
-                <Form.Control type="email" className="formControl"/> <br />
+                <Form.Control type="email" /> <br />
                 <Form.Label className="formLabel">Password:</Form.Label>
-                <Form.Control type="password" className="formControl"/> <br />
+                <Form.Control type="password" /> <br />
                 <Form.Label className="formLabel">Repeat password:</Form.Label>
-                <Form.Control type="password" className="formControl"/> <br />
+                <Form.Control type="password" /> <br />
                 <div id='agreementForm'>
                     <Form.Check /> I read and accept the&nbsp;<Link to="#agreement" onClick={this.scrollEvent}>agreement</Link>.
                 </div>

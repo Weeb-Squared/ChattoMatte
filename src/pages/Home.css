@@ -34,7 +34,7 @@ This css file covers the Home page layout and form styling and general page styl
 
 .loginForm, .registerForm {
     height: 50%;
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +42,7 @@ This css file covers the Home page layout and form styling and general page styl
     font-size: xx-large;
 }
 
-.formLabel {
+.form-label {
     width: 100%;
     font-size: 30px;
     font-weight: 700;
@@ -50,7 +50,7 @@ This css file covers the Home page layout and form styling and general page styl
     text-shadow: 1px 1px 10px rgb(250, 155, 171);
 }
 
-.formControl:hover {
+.form-control:hover {
     box-shadow: 0 0 8px 8px rgba(255, 255, 255, 0.2);
 }
 
@@ -68,6 +68,7 @@ This css file covers the Home page layout and form styling and general page styl
 
 p {
     font-size: large;
+    text-align: center;
 }
 
 a {

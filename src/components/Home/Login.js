@@ -35,9 +35,9 @@ class Home extends React.Component {
         return (
             <Form onSubmit={this.submitEvent} id="login" className="loginForm">
                 <Form.Label className="formLabel"> Username: </Form.Label>
-                <Form.Control type="text" className="formControl" /> <br />
+                <Form.Control type="text"/> <br />
                 <Form.Label className="formLabel">Password:</Form.Label>
-                <Form.Control type="password" className="formControl"/> <br />
+                <Form.Control type="password"/> <br />
                 <p>Don't have account? <Link to="#register" onClick={this.scrollEvent}>Register now!</Link></p> 
                 <Button variant="primary" type="submit" className="formButton">Login</Button>
             </Form>

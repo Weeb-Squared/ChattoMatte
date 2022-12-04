@@ -10,7 +10,8 @@ This css file covers unique styling for register form
 #agreementForm {
     width: 100%;
     font-size: large;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     color: white;
@@ -23,6 +24,6 @@ This css file covers unique styling for register form
     color: pink;
     text-decoration: none;
 }
-#agreagreementFormement > :last-child:hover {
+#agreementForm > :last-child:hover {
     text-shadow: 0 0 3px white;
 }

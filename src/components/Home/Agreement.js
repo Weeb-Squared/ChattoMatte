@@ -11,8 +11,13 @@ class Agreement extends React.Component {
      * @param {event} e 
      */
     scrollEvent(e) {
-        if(e.currentTarget.href.includes("login")) window.scrollTo(0, 0);
-        else window.scrollTo(0, document.body.scrollHeight);
+        if(e.currentTarget.href.includes("login")) {
+            document.title = "ChattoMatte - Login";
+            window.scrollTo(0, 0);
+        } else {
+            document.title = "ChattoMatte - Register";
+            window.scrollTo(0, document.body.scrollHeight);
+        }
     }
 
     render() {

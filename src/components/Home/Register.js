@@ -14,8 +14,13 @@ class Register extends React.Component {
      * @param {event} event
      */
     scrollEvent(e) {
-        if (e.currentTarget.href.includes("login")) window.scrollTo(0, 0);
-        else window.scrollTo(document.documentElement.scrollWidth, document.body.scrollHeight);
+        if (e.currentTarget.href.includes("login")) {
+            document.title = "ChattoMatte - Login";
+            window.scrollTo(0, 0);
+        } else {
+            document.title = "ChattoMatte - Agreement";
+            window.scrollTo(document.documentElement.scrollWidth, document.body.scrollHeight);
+        }
     }
 
     /**

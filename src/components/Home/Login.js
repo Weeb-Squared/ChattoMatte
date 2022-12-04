@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 
 import { Link } from "react-router-dom";
 
-class Home extends React.Component {
+class Login extends React.Component {
     constructor(props) {
         super(props);
         this.submitEvent = this.submitEvent.bind(this);
@@ -18,6 +18,7 @@ class Home extends React.Component {
      */
     scrollEvent(e) {
         window.scrollTo(0, document.body.scrollHeight);
+        document.title = "ChattoMatte - Register";
     }
 
     /**
@@ -34,7 +35,7 @@ class Home extends React.Component {
     render() {
         return (
             <Form onSubmit={this.submitEvent} id="login" className="loginForm">
-                <Form.Label className="formLabel"> Username: </Form.Label>
+                <Form.Label className="formLabel">Username: </Form.Label>
                 <Form.Control type="text"/> <br />
                 <Form.Label className="formLabel">Password:</Form.Label>
                 <Form.Control type="password"/> <br />
@@ -45,4 +46,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default Login;

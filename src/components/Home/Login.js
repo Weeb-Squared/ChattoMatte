@@ -32,17 +32,12 @@ class Login extends React.Component {
         console.log(formNodes);
         event.preventDefault();
 
-        // const headers = {};
-        // headers.push('Content-Type', 'application/json');
-        // headers.push('Access-Control-Allow-Origin', '*');
-
-
         const headers = {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}
 
         const request = {
             method: "POST",
-            body: JSON.stringify({user: formNodes[0].value, pwd: formNodes[1].value}),
-            header: headers
+            body: JSON.stringify({"user": formNodes[0].value, "pwd": formNodes[1].value}),
+            headers: headers
         }
         console.log(request)
         let res = await fetch("http://localhost:3500/auth", request);

@@ -1,7 +1,7 @@
 import React from "react";
-import "./Login.css"
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import "./Login.css";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,7 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.submitEvent = this.submitEvent.bind(this);
+        this.res = {};
     }
 
     /**
@@ -26,10 +27,28 @@ class Login extends React.Component {
      * 
      * @param {event} event 
      */
-    submitEvent(event) {
+    async submitEvent(event) {
         const formNodes = document.querySelectorAll(".loginForm > input");
         console.log(formNodes);
         event.preventDefault();
+
+        // const headers = {};
+        // headers.push('Content-Type', 'application/json');
+        // headers.push('Access-Control-Allow-Origin', '*');
+
+
+        const headers = {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}
+
+        const request = {
+            method: "POST",
+            body: JSON.stringify({user: formNodes[0].value, pwd: formNodes[1].value}),
+            header: headers
+        }
+        console.log(request)
+        let res = await fetch("http://localhost:3500/auth", request);
+        let data = await res.json();
+        console.log(data);
+        this.setState(data);
     }
 
     render() {

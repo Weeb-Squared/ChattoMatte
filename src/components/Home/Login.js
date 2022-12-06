@@ -36,6 +36,7 @@ class Login extends React.Component {
 
         const request = {
             method: "POST",
+            credentials: 'include',
             body: JSON.stringify({"user": formNodes[0].value, "pwd": formNodes[1].value}),
             headers: headers
         }

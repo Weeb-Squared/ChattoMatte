@@ -54,7 +54,7 @@ class Login extends React.Component {
                 <Form.Control type="text"/> <br />
                 <Form.Label className="formLabel">Password:</Form.Label>
                 <Form.Control type="password"/> <br />
-                <p>Don't have account? <Link to="#register" onClick={this.scrollEvent}>Register now!</Link></p> 
+                <p>Don't have an account? <Link to="#register" onClick={this.scrollEvent}>Register now!</Link></p> 
                 <Button variant="primary" type="submit" className="formButton">Login</Button>
             </Form>
         );

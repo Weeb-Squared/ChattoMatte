@@ -49,7 +49,7 @@ class Register extends React.Component {
                 <div id='agreementForm'>
                     <Form.Check /> I read and accept the&nbsp;<Link to="#agreement" onClick={this.scrollEvent}>agreement</Link>.
                 </div>
-                <p>Have already an account? <Link to="#login" onClick={this.scrollEvent}>Login now!</Link></p>
+                <p>Already have an account? <Link to="#login" onClick={this.scrollEvent}>Login now!</Link></p>
                 <Button variant="primary" type="submit" className="formButton">Register</Button>
             </Form>   
         )

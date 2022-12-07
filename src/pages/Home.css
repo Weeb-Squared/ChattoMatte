@@ -24,6 +24,10 @@ This css file covers the Home page layout and form styling and general page styl
     margin-left: 100%;
 }
 
+.loginForm > div, .registerForm > div {
+    width:100%;
+}
+
 #emptySpace, #agreement {
     height: 50%;
     width: 100%;
@@ -79,4 +83,12 @@ a {
 a:hover {
     color: pink;
     text-shadow: 0 0 5px white;
+}
+
+.form-control:invalid {
+    border: 5px solid darkorange;
+}
+.invalid-feedback {
+    color: red;
+    text-shadow: 0 0 10px white ;
 }

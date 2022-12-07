@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 
@@ -7,7 +7,15 @@ import "./Register.css"
 import { Link } from "react-router-dom";
 
 class Register extends React.Component {
-
+    constructor(props) {
+        super(props);
+        this.submitEvent = this.submitEvent.bind(this);
+        this.username = createRef(this.username);
+        this.email = createRef();
+        this.password = createRef();
+        this.repeatPassword = createRef();
+        this.agreement = createRef();
+    }
     /**
      * scrollEvent - method called every time user clicks on link to see login form or agreement
      * 
@@ -28,26 +36,45 @@ class Register extends React.Component {
      * 
      * @param {event} event 
      */
-    submitEvent(event) {
-        const formNodes = document.querySelectorAll(".registerForm > input");
-        console.log(formNodes);
-
+    async submitEvent(event) {
         event.preventDefault();
+
+        const headers = {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'};
+
+        const request = {
+            method: "POST",
+            credentials: 'include',
+            body: JSON.stringify({user: this.username.current.value, pwd:this.password.current.value}),
+            headers: headers
+        }
+        console.log(request)
+        let res = await fetch("http://localhost:3500/register", request);
+        let data = await res.json();
+        console.log(data);
     }
 
     render() {
         return (
             <Form onSubmit={this.submitEvent} id="register" className='registerForm'>
-                <Form.Label className="formLabel"> Username: </Form.Label>
-                <Form.Control type="text" /> <br />
-                <Form.Label className="formLabel">E-mail:</Form.Label>
-                <Form.Control type="email" /> <br />
-                <Form.Label className="formLabel">Password:</Form.Label>
-                <Form.Control type="password" /> <br />
-                <Form.Label className="formLabel">Repeat password:</Form.Label>
-                <Form.Control type="password" /> <br />
+                <Form.Group>
+                    <Form.Label className="formLabel"> Username: </Form.Label>
+                    <Form.Control ref={ this.username } type="text" />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label className="formLabel">E-mail:</Form.Label>
+                    <Form.Control ref={ this.email } type="email" />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label className="formLabel">Password:</Form.Label>
+                    <Form.Control ref={ this.password } type="password" />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label className="formLabel">Repeat password:</Form.Label>
+                    <Form.Control ref={ this.repeatPassword } type="password" />
+                </Form.Group>
+                <br />
                 <div id='agreementForm'>
-                    <Form.Check /> I read and accept the&nbsp;<Link to="#agreement" onClick={this.scrollEvent}>agreement</Link>.
+                    <Form.Check ref={ this.agreement }/> I read and accept the&nbsp;<Link to="#agreement" onClick={this.scrollEvent}>agreement</Link>.
                 </div>
                 <p>Already have an account? <Link to="#login" onClick={this.scrollEvent}>Login now!</Link></p>
                 <Button variant="primary" type="submit" className="formButton">Register</Button>

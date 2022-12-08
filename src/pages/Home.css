@@ -85,8 +85,8 @@ a:hover {
     text-shadow: 0 0 5px white;
 }
 
-.form-control:invalid {
-    border: 5px solid darkorange;
+.was-validated .form-control:invalid {
+    border: 3px solid red;
 }
 .invalid-feedback {
     color: red;

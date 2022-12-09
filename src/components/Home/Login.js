@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import "./Login.css";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -10,6 +9,7 @@ function Login () {
     const [validated, setValidated] = useState(false);
     const username = useRef();
     const password = useRef();
+    const [error, setError] = useState(null);
 
     /**
      * scrollEvent - method called every time user click on link to see the register form
@@ -28,6 +28,7 @@ function Login () {
      */
 
     async function submitEvent(event) {
+        setError(false);
         setValidated(true);        
         event.preventDefault();
         if (username.current.value==="" || password.current.value==="") {return}
@@ -41,12 +42,15 @@ function Login () {
             headers: headers
         }
         let res = await fetch("http://localhost:3500/auth", request);
-        
-        console.log(res);
+        if (res.status===200) {
+            setError(false);
+        } else {
+            setError(true);
+        }
     }
     
     return (
-        <Form noValidate onSubmit={submitEvent} validated = { validated } id="login" className="loginForm">
+        <Form noValidate onSubmit={submitEvent} validated = { validated } className="loginForm">
             <Form.Group>
                 <Form.Label className="formLabel">Username: </Form.Label>
                 <Form.Control ref={ username } type="text" required />
@@ -63,6 +67,10 @@ function Login () {
                 </Form.Control.Feedback>
             </Form.Group>
             <br />
+            <div className={!error ? "hidden" : "visible"}>
+                    Incorrect username or password 
+            </div>
+            <br className={!error ? "hidden" : "visible"}/>
             <p>Don't have an account? <Link to="#register" onClick={scrollEvent}>Register now!</Link></p> 
             <Button variant="primary" type="submit" className="formButton">Login</Button>
         </Form>

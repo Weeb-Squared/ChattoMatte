@@ -2,8 +2,6 @@ import React, { createRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button'
 
-import "./Register.css"
-
 import { Link } from "react-router-dom";
 
 class Register extends React.Component {

@@ -1,6 +1,10 @@
-/*
-This css file covers the Home page layout and form styling and general page styling 
-*/
+/**
+  *This css file covers the Home page styling
+  */
+
+/**
+  *Css below covers general styling for home page
+  */
 
 #componentsBox {
     display: flex;
@@ -8,7 +12,6 @@ This css file covers the Home page layout and form styling and general page styl
 }
 
 #componentsBox > div:first-child {
-    background: linear-gradient(90deg, #009FFD, #2A2A72);
     height: 200vh;
     width: 100%;
     display: flex;
@@ -19,13 +22,12 @@ This css file covers the Home page layout and form styling and general page styl
 #componentsBox > div:last-child {
     width: 100%;
     height: 200vh;
-    background: linear-gradient(90deg, #2A2A72, #030369);
     position: absolute;
     margin-left: 100%;
 }
 
 .loginForm > div, .registerForm > div {
-    width:100%;
+    width: 100%;
 }
 
 #emptySpace, #agreement {
@@ -48,7 +50,7 @@ This css file covers the Home page layout and form styling and general page styl
 
 .form-label {
     width: 100%;
-    font-size: 30px;
+    font-size: 1em;
     font-weight: 700;
     margin-bottom: 0;
     text-shadow: 1px 1px 10px rgb(250, 155, 171);
@@ -57,6 +59,10 @@ This css file covers the Home page layout and form styling and general page styl
 .form-control:hover {
     box-shadow: 0 0 8px 8px rgba(255, 255, 255, 0.2);
 }
+
+.form-control:focus {
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.25);
+} 
 
 .formButton {
     min-height: 4vh;
@@ -68,7 +74,7 @@ This css file covers the Home page layout and form styling and general page styl
 
 .formButton:hover {
     box-shadow: 0 0 8px 8px rgba(255,255,255, .2);
-} 
+}
 
 p {
     font-size: large;
@@ -85,10 +91,67 @@ a:hover {
     text-shadow: 0 0 5px white;
 }
 
-.was-validated .form-control:invalid {
-    border: 3px solid red;
+/**
+  * Styling for login section and register form
+  */
+
+.was-validated .form-control:invalid, .was-validated .form-control:valid {
+    border-width: 3px;
 }
+
 .invalid-feedback {
     color: red;
     text-shadow: 0 0 10px white ;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    color: red;
+    font-size: 0.875em;
+    text-shadow: 0 0 10px white;
+}
+
+.registerForm {
+    height: 50%;
+    width: 40vh;
+}
+
+#agreementForm {
+    width: 100%;
+    font-size: large;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#agreementForm > :first-child {
+    margin: 10px;
+}
+
+/**
+  * Css related to the agreement section
+  */
+
+#agreement > div {
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul {
+    width: 100%;
+    list-style-type: none;
+    font-size: larger;
+    padding: 0;
+}
+
+section {
+    width: 100%;
 }

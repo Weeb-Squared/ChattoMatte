@@ -7,12 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
+import Page404 from "./pages/404"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
     <Routes>
-        <Route exact path="/" element={<Home/>}> </Route>
+        <Route path="/" element={<Home/>}> </Route>
+        <Route path="*" element={<Page404/>}> </Route>
     </Routes>    
     </Router>
 );

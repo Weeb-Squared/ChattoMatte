@@ -6,11 +6,9 @@ function GuildSelectList () {
         <div id="guildSelectList">
             {Array(30).fill(1).map((el, i) =>{
                 let id = `selectGuildId${i}`
-                return <div id={ id }> </div>
+                return <div id={ id } key={i} > </div>
             })}
-            
         </div>
-
     )
 }
 

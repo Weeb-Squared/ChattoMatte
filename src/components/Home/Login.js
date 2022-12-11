@@ -47,10 +47,11 @@ function Login () {
         } else {
             setError(true);
         }
+        // console.log(await res.json())
     }
     
     return (
-        <Form noValidate onSubmit={submitEvent} validated = { validated } className="loginForm">
+        <Form noValidate onSubmit={submitEvent} validated = { validated } id="loginForm">
             <Form.Group>
                 <Form.Label className="formLabel">Username: </Form.Label>
                 <Form.Control ref={ username } type="text" required />

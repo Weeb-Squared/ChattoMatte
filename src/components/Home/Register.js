@@ -53,7 +53,7 @@ class Register extends React.Component {
 
     render() {
         return (
-            <Form onSubmit={this.submitEvent} id="register" className='registerForm'>
+            <Form onSubmit={this.submitEvent} id='registerForm'>
                 <Form.Group>
                     <Form.Label className="formLabel"> Username: </Form.Label>
                     <Form.Control ref={ this.username } type="text" />

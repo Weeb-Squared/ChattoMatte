@@ -6,7 +6,8 @@ import "./404.css"
 function Page404() {
     return (
         <div id="div404">
-            Senpai, I'm stuck, please come&nbsp;<Link to="/">home</Link>.
+            <h1>404</h1>
+            <p>Senpai, I'm stuck, please come&nbsp;<Link to="/">home</Link>.</p>
         </div>
     )
 }

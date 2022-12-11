@@ -1,18 +1,8 @@
 body {
-    background: linear-gradient(90deg, #009FFD, #53a7d8 50%,#009FFD 100%);
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     font-family: 'Helvetica';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
     scroll-behavior: smooth;
-    color: white;
-}
-
-#root {
-    width: 100%;
 }

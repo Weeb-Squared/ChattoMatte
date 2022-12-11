@@ -1,0 +1,35 @@
+:root {
+    --DarkGrey: hsl(0, 0%, 60%);
+    --DarkerGrey: hsl(0, 0%, 10%);
+}
+
+#app {
+    height: 100vh;
+    background-color: var(--DarkerGrey);
+    padding: 10px;
+}
+
+#guildSelectList {
+    height: auto;
+    min-height: calc(100vh - 20px);
+    max-height: 100vh;
+    width: 70px;
+    padding: 10px;
+    border-radius: 100px;
+    background-color: var(--DarkGrey);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    /* idk whats going on but scrollbar disappears and i like that*/
+}
+
+[id^=selectGuildId] {
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 1000px;
+}

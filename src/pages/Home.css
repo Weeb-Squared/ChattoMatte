@@ -7,26 +7,22 @@
   */
 
 #componentsBox {
+    color: white;
+    width: 200%;
     display: flex;
     flex-wrap: nowrap;
+    background: repeating-linear-gradient(90deg, #009FFD, #53a7d8 25%,#009FFD 50%);
 }
 
-#componentsBox > div:first-child {
+#componentsBox > div {
+    width: 50%; /* Div now has 50% of 200% so it has 100% width */
     height: 200vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#componentsBox > div:last-child {
-    width: 100%;
-    height: 200vh;
-    position: absolute;
-    margin-left: 100%;
-}
-
-.loginForm > div, .registerForm > div {
+#loginForm > div, #registerForm > div {
     width: 100%;
 }
 
@@ -38,7 +34,7 @@
     justify-content: center;
 }
 
-.loginForm, .registerForm {
+#loginForm, #registerForm {
     height: 50%;
     width: 50%;
     display: flex;
@@ -114,7 +110,7 @@ a:hover {
     text-shadow: 0 0 10px white;
 }
 
-.registerForm {
+#registerForm {
     height: 50%;
     width: 40vh;
 }

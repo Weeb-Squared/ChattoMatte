@@ -1,19 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
-import Page404 from "./pages/404"
+import Page404 from "./pages/404";
+import App from "./pages/App";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
     <Routes>
         <Route path="/" element={<Home/>}> </Route>
+        <Route path="/app" element={<App/>}> </Route>
         <Route path="*" element={<Page404/>}> </Route>
     </Routes>    
     </Router>

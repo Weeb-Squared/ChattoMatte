@@ -24,6 +24,10 @@
     color: white;
 }
 
+/* 
+Css related to GuildSelectList Component
+*/
+
 #guildSelectList {
     height: 100vh;
     width: 70px;
@@ -44,6 +48,10 @@
     background-color: white;
     border-radius: 1000px;
 }
+
+/* 
+Css related to UserInformation Component
+*/
 
 #userInformation {
     min-width: 20%;
@@ -86,14 +94,20 @@
     flex-wrap: nowrap;
 }
 
-#userInfoIcons > svg {
+#userInfoIcons > * {
     border-radius: 10px;
     padding: 6px;
     width: 3em;
     height: 80%;
 }
 
-#userInfoIcons > svg:hover {
+/* Settings button exception */
+#userInfoIcons > * > svg {
+    width: 100%;
+    height: 100%;
+}
+
+#userInfoIcons > *:hover {
     background-color: var(--primary-700);
     cursor: pointer;
 }

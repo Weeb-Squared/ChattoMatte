@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import { BsFillGearFill, BsFillMicFill, BsFillMicMuteFill } from "react-icons/bs";
 import { TbHeadphones, TbHeadphonesOff } from "react-icons/tb"
 
@@ -24,7 +26,7 @@ function UserInformation () {
             <div id="userInfoIcons">
                 { microphone ? <BsFillMicFill id="microphoneIcon" color="#fff" onClick={()=>setMicrophone(!microphone)}/> : <BsFillMicMuteFill id="microphoneIcon" color="#fff" onClick={()=>setMicrophone(!microphone)}/>}
                 { headphones ? <TbHeadphones id="headphonesIcon" color="#fff" onClick={()=>setHeadphones(!headphones)}/> : <TbHeadphonesOff id="headphonesIcon" color="#fff" onClick={()=>setHeadphones(!headphones)}/> }
-                <BsFillGearFill color="#fff"/>
+                <Link to="/settings"><BsFillGearFill color="#fff" /></Link>
             </div>
         </div>
     )

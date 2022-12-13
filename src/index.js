@@ -9,6 +9,8 @@ import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import Page404 from "./pages/404";
 import App from "./pages/App";
+import Settings from "./pages/Settings";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +18,7 @@ root.render(
     <Routes>
         <Route path="/" element={<Home/>}> </Route>
         <Route path="/app" element={<App/>}> </Route>
+        <Route path="/settings" element={<Settings/>}> </Route>
         <Route path="*" element={<Page404/>}> </Route>
     </Routes>    
     </Router>

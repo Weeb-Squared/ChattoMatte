@@ -1,0 +1,141 @@
+:root {
+    --primary-hue: 0;
+    --primary-saturation: 0%;
+
+    --primary-000: hsl(0, 00%, 100%);
+    --primary-100: hsl(0, 0%, 90%);
+    --primary-200: hsl(0, 0%, 80%);
+    --primary-300: hsl(0, 0%, 70%);
+    --primary-400: hsl(0, 0%, 60%);
+    --primary-500: hsl(0, 0%, 50%);
+    --primary-600: hsl(0, 0%, 40%);
+    --primary-700: hsl(0, 0%, 30%);
+    --primary-750: hsl(0, 0%, 25%);
+    --primary-800: hsl(0, 0%, 20%);
+    --primary-850: hsl(0, 0%, 15%);
+    --primary-900: hsl(0, 0%, 10%);
+    --primary-950: hsl(0, 0%, 5%);
+    --primary-1000: hsl(0, 0%, 0%);
+}
+
+#app {
+    height: 100vh;
+    background-color: var(--primary-850);
+    display: flex;
+    color: white;
+}
+
+/* 
+Css related to GuildSelectList Component
+*/
+
+#guildSelectList {
+    height: 100vh;
+    width: 70px;
+    padding: 10px;
+    background-color: var(--primary-900);
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Select all guild avatars in guild select list */
+    [id^=selectGuildId] {
+        margin: 8px 0;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 1000px;
+    }
+    
+}
+
+/* 
+Css related to UserInformation Component
+*/
+
+#userInformation {
+    width: 300px;
+    height: 60px;
+    background-color: var(--primary-800);
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+
+
+    #userInfo {
+        width: 60%;
+        padding-left: 8px;
+
+        /*Probably it will be replaced when we will get real data*/
+        & > p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin: 0; 
+            text-align: left;
+
+            &:first-of-type {
+                font-weight: bold;
+                font-size: small;
+            }
+            
+            &:nth-of-type(2) {
+                font-size: x-small;
+            }
+        } 
+    }
+
+    #userInfoIcons {
+        width: 40%;
+        display: flex;
+        flex-wrap: nowrap;
+
+        /*Probably it will be replaced when we will get real data*/
+        & > * {
+            border-radius: 10px;
+            padding: 6px;
+            width: 3em;
+            height: 80%;
+
+            /* Makes hover effect in userInformation*/
+            &:hover {
+                background-color: var(--primary-700);
+                cursor: pointer; /* it's still needed for other icons in user info bar */
+            }
+
+            /* Settings button exception */
+            & > svg {
+                 width: 100%; 
+                 height: 100%;
+            }
+        }
+    }
+}
+
+/*
+Css related to FriendsList Component
+*/
+
+#friendsList {
+    width: 300px;
+    background-color: var(--primary-750);
+    height: 100vh;
+
+    .closeIcon:hover {
+        color: white;
+    }
+
+    #searchFriendsField {
+        height: 25px;
+        width: 75%;
+        font-size: smaller;
+        margin: 0 12.5%;
+    }
+
+}

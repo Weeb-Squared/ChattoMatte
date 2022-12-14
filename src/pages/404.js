@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 
-import "./404.css"
+import "./404.scss"
 
 function Page404() {
     return (

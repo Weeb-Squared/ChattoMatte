@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css"
+import "./App.scss"
 
 import GuildSelectList from "../components/App/GuildSelectList"
 import UserInformation from "../components/App/UserInformation";

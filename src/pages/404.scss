@@ -7,15 +7,19 @@
     display: flex;
     text-align: center;
     flex-direction: column;
-    justify-content: center;    
-}
+    justify-content: center;
+    
+    & * {
+        font-size: xx-large;
+        font-weight: 700;
+        text-shadow: 0 0 8px grey;
+    }
 
-#div404 * {
-    font-size: xx-large;
-    font-weight: 700;
-    text-shadow: 0 0 8px grey;
-}
+    & > h1 {
+        font-size: 128px;
+    }
 
-#div404 > h1 {
-    font-size: 128px;
+    & a {
+        color: pink;
+    }
 }

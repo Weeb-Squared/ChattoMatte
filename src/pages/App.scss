@@ -119,17 +119,13 @@ Css related to UserInformation Component
 }
 
 /*
-Css related to FriendsList Component
+Css related to accordion (collapsible menu) Component
 */
 
-#friendsList {
+#accordion {
     width: 300px;
     background-color: var(--primary-750);
-    height: 100vh;
-
-    .closeIcon:hover {
-        color: white;
-    }
+    max-height: 100vh;
 
     #searchFriendsField {
         height: 25px;
@@ -137,5 +133,38 @@ Css related to FriendsList Component
         font-size: smaller;
         margin: 0 12.5%;
     }
+
+    & .btn-primary {
+        background-color: var(--primary-800);
+        color: var(--primary-200);
+        width: 100%;
+        border: 1px solid black;
+
+        &:hover {
+            background-color: var(--primary-850);
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    
+    & .card {
+        max-height: calc(100vh - 120px);
+        margin: 5px;
+        background-color: var(--primary-750);
+        border: none;
+    }
+
+    & .card-body {
+
+        overflow: scroll;
+        overflow-x: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+                
+    }
+
 
 }

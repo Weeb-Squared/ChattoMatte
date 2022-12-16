@@ -33,7 +33,7 @@ Css related to GuildSelectList Component
     height: 100vh;
     width: 70px;
     padding: 10px;
-    background-color: var(--primary-900);
+    background-color: var(--primary-850);
     overflow-x: hidden;
     overflow-y: scroll;
 
@@ -127,6 +127,8 @@ Css related to accordion (collapsible menu) Component
     background-color: var(--primary-750);
     max-height: 100vh;
 
+    border-right: 3px solid var(--primary-850);
+
     #searchFriendsField {
         height: 25px;
         width: 75%;
@@ -141,7 +143,8 @@ Css related to accordion (collapsible menu) Component
         border: 1px solid black;
 
         &:hover {
-            background-color: var(--primary-850);
+            background-color: var(--primary-700);
+            color: #eee;
         }
 
         &:focus {
@@ -152,19 +155,110 @@ Css related to accordion (collapsible menu) Component
     & .card {
         max-height: calc(100vh - 120px);
         margin: 5px;
-        background-color: var(--primary-750);
+        background-color: var(--primary-800);
         border: none;
     }
 
     & .card-body {
-
         overflow: scroll;
-        overflow-x: none;
+        overflow-x: hidden;
+        //overwriting (changing) margin with padding
+        padding: 0;
+        margin: var(--bs-card-spacer-y) 2px var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+
         &::-webkit-scrollbar {
-            display: none;
+            width: 8px;
+            background-color: transparent;
+            border-radius: 100px;
         }
-                
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 100px;
+            background-color: var(--primary-900);
+        }
+    }
+}
+
+/*
+MessageBox
+*/
+#messageBox {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* idk how it works, but fill's the rest of space*/
+    height: 100vh;
+
+    #contentLabel {
+        width: 100%;
+        padding: 8px;
+        background-color: var(--primary-800);
+        font-size: small;
+        display: flex;
+        flex-wrap: wrap;
+
+        & > div:nth-of-type(1) {
+            width: 70%;
+        }
+        
+        & > div:nth-of-type(2) {
+            width: 30%;
+            text-align: end;
+        }
+
+        & svg {
+            padding: 5px;
+            width: 30px;
+            height: 30px
+        }
     }
 
+    #messages {
+        background-color: var(--primary-750);
+        overflow-x: hidden;
+        overflow-y: scroll;
+        flex-grow: 1;
+        padding: 15px;
 
+        &::-webkit-scrollbar {
+            width: 8px;
+            background-color: transparent;
+            border-radius: 100px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 100px;
+            background-color: var(--primary-900);
+        }
+    }
+
+    #messageInputBox {
+        min-height: 60px;
+        max-height: 60px;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-750);
+
+
+        & > input {
+            width: 95%;
+            background-color: var(--primary-600);
+            color: white;
+
+            &:hover {
+                color: #eee;
+            }
+    
+            &:focus {
+                box-shadow: none;
+            }
+
+            
+            &::placeholder { 
+                color: white;
+            }
+        }
+    }
 }

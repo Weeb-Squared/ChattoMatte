@@ -37,12 +37,12 @@ class Register extends React.Component {
     async submitEvent(event) {
         event.preventDefault();
 
-        const headers = {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'};
+        const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
 
         const request = {
             method: "POST",
             credentials: 'include',
-            body: JSON.stringify({user: this.username.current.value, pwd:this.password.current.value}),
+            body: JSON.stringify({ user: this.username.current.value, pwd: this.password.current.value }),
             headers: headers
         }
         console.log(request)
@@ -56,29 +56,29 @@ class Register extends React.Component {
             <Form onSubmit={this.submitEvent} id='registerForm'>
                 <Form.Group>
                     <Form.Label className="formLabel"> Username: </Form.Label>
-                    <Form.Control ref={ this.username } type="text" />
+                    <Form.Control ref={this.username} type="text" />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label className="formLabel">E-mail:</Form.Label>
-                    <Form.Control ref={ this.email } type="email" />
+                    <Form.Control ref={this.email} type="email" />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label className="formLabel">Password:</Form.Label>
-                    <Form.Control ref={ this.password } type="password" />
+                    <Form.Control ref={this.password} type="password" />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label className="formLabel">Repeat password:</Form.Label>
-                    <Form.Control ref={ this.repeatPassword } type="password" />
+                    <Form.Control ref={this.repeatPassword} type="password" />
                 </Form.Group>
                 <br />
                 <div id='agreementForm'>
-                    <Form.Check ref={ this.agreement }/> I read and accept the&nbsp;<Link to="#agreement" onClick={this.scrollEvent}>agreement</Link>.
+                    <Form.Check type='checkbox' ref={this.agreement}></Form.Check> I read and accept the&nbsp;<Link to="#agreement" onClick={this.scrollEvent}>agreement</Link>.
                 </div>
                 <p>Already have an account? <Link to="#login" onClick={this.scrollEvent}>Login now!</Link></p>
                 <Button variant="primary" type="submit" className="formButton">Register</Button>
-            </Form>   
+            </Form>
         )
     }
-} 
+}
 
 export default Register;

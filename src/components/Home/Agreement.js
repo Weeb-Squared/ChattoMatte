@@ -3,14 +3,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Agreement extends React.Component {
-    
+
     /**
      * scrollEvent - method called every time user clicks on link to see login or register form
      * 
      * @param {event} e 
      */
     scrollEvent(e) {
-        if(e.currentTarget.href.includes("login")) {
+        if (e.currentTarget.href.includes("login")) {
             document.title = "ChattoMatte - Login";
             window.scrollTo(0, 0);
         } else {

@@ -3,7 +3,7 @@ import React from "react";
 import "./Settings.scss";
 
 class Settings extends React.Component {
-    render () {
+    render() {
         return (
             <div>settings</div>
         )

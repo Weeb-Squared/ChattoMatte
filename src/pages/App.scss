@@ -1,3 +1,5 @@
+$component-border: 3px solid var(--primary-850);
+
 :root {
     --primary-hue: 0;
     --primary-saturation: 0%;
@@ -49,7 +51,7 @@ Css related to GuildSelectList Component
         background-color: white;
         border-radius: 1000px;
     }
-    
+
 }
 
 /* 
@@ -67,28 +69,30 @@ Css related to UserInformation Component
     align-items: center;
     padding-right: 5px;
 
+    border-top: $component-border;
+    border-right: $component-border;
 
     #userInfo {
         width: 60%;
         padding-left: 8px;
 
         /*Probably it will be replaced when we will get real data*/
-        & > p {
+        &>p {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            margin: 0; 
+            margin: 0;
             text-align: left;
 
             &:first-of-type {
                 font-weight: bold;
                 font-size: small;
             }
-            
+
             &:nth-of-type(2) {
                 font-size: x-small;
             }
-        } 
+        }
     }
 
     #userInfoIcons {
@@ -97,7 +101,7 @@ Css related to UserInformation Component
         flex-wrap: nowrap;
 
         /*Probably it will be replaced when we will get real data*/
-        & > * {
+        &>* {
             border-radius: 10px;
             padding: 6px;
             width: 3em;
@@ -106,13 +110,14 @@ Css related to UserInformation Component
             /* Makes hover effect in userInformation*/
             &:hover {
                 background-color: var(--primary-700);
-                cursor: pointer; /* it's still needed for other icons in user info bar */
+                cursor: pointer;
+                /* it's still needed for other icons in user info bar */
             }
 
             /* Settings button exception */
-            & > svg {
-                 width: 100%; 
-                 height: 100%;
+            &>svg {
+                width: 100%;
+                height: 100%;
             }
         }
     }
@@ -127,7 +132,7 @@ Css related to accordion (collapsible menu) Component
     background-color: var(--primary-750);
     max-height: 100vh;
 
-    border-right: 3px solid var(--primary-850);
+    border-right: $component-border;
 
     #searchFriendsField {
         height: 25px;
@@ -151,7 +156,7 @@ Css related to accordion (collapsible menu) Component
             box-shadow: none;
         }
     }
-    
+
     & .card {
         max-height: calc(100vh - 120px);
         margin: 5px;
@@ -185,7 +190,8 @@ MessageBox
 #messageBox {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* idk how it works, but fill's the rest of space*/
+    flex-grow: 1;
+    /* idk how it works, but fill's the rest of space*/
     height: 100vh;
 
     #contentLabel {
@@ -195,12 +201,13 @@ MessageBox
         font-size: small;
         display: flex;
         flex-wrap: wrap;
+        border-bottom: $component-border;
 
-        & > div:nth-of-type(1) {
+        &>div:nth-of-type(1) {
             width: 70%;
         }
-        
-        & > div:nth-of-type(2) {
+
+        &>div:nth-of-type(2) {
             width: 30%;
             text-align: end;
         }
@@ -242,21 +249,17 @@ MessageBox
         background-color: var(--primary-750);
 
 
-        & > input {
+        &>input {
             width: 95%;
             background-color: var(--primary-600);
             color: white;
 
-            &:hover {
-                color: #eee;
-            }
-    
             &:focus {
                 box-shadow: none;
+                border-color: white;
             }
 
-            
-            &::placeholder { 
+            &::placeholder {
                 color: white;
             }
         }

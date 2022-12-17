@@ -4,7 +4,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 
 function CollapsibleMenu () {
-    return (  
+    return (
         <div id="accordion">
             <div className="card">
                 <div className="label">

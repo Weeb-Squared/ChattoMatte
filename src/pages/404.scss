@@ -1,6 +1,6 @@
 #div404 {
     width: 100%;
-    background: repeating-linear-gradient(90deg, #009FFD, #53a7d8 50%,#009FFD 100%);
+    background: repeating-linear-gradient(90deg, #009FFD, #53a7d8 50%, #009FFD 100%);
     color: white;
     position: relative;
     height: 100vh;
@@ -8,18 +8,23 @@
     text-align: center;
     flex-direction: column;
     justify-content: center;
-    
+
     & * {
         font-size: xx-large;
         font-weight: 700;
         text-shadow: 0 0 8px grey;
     }
 
-    & > h1 {
+    &>h1 {
         font-size: 128px;
     }
 
     & a {
         color: pink;
+        text-decoration: none;
+        
+        &:hover {
+            text-shadow: 0 0 5px darkgrey;
+        }
     }
 }

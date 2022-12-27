@@ -1,15 +1,22 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth"
+import axios from "../api/axios";
 
-function Login() {
+const Login = () => {
 
     const [validated, setValidated] = useState(false);
     const username = useRef();
     const password = useRef();
     const [error, setError] = useState(null);
+
+    const { setAuth, persist, setPersist } = useAuth();
+    const navigate = useNavigate();
+    // const location = useLocation();
+    // const from = location.state?.from?.pathname || "/";
 
     /**
      * scrollEvent - method called every time user click on link to see the register form
@@ -32,23 +39,33 @@ function Login() {
         setValidated(true);
         event.preventDefault();
         if (username.current.value === "" || password.current.value === "") { return }
+        try {
+            const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
 
-        const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
-
-        const request = {
-            method: "POST",
-            credentials: 'include',
-            body: JSON.stringify({ user: username.current.value, pwd: password.current.value }),
-            headers: headers
-        }
-        let res = await fetch("http://localhost:3500/auth", request);
-        if (res.status === 200) {
-            setError(false);
-        } else {
+            const res = await axios.post('/auth', 
+                JSON.stringify({ user: username.current.value, pwd: password.current.value }), 
+                {
+                    headers: headers,
+                    withCredentials: true
+                }
+            )
+            const accessToken = res?.data?.accessToken;
+            const roles = res?.data?.roles;
+            setAuth({ username, password, roles, accessToken });
+            navigate('/app', {replace: true})
+        } catch (err) {
+            console.log(err)
             setError(true);
         }
-        // console.log(await res.json());
     }
+
+    const togglePersist = () => {
+        setPersist(prev => !prev);
+    }
+
+    useEffect(() => {
+        localStorage.setItem("persist", persist);
+    }, [persist])
 
     return (
         <Form noValidate onSubmit={submitEvent} validated={validated} id="loginForm">
@@ -66,6 +83,10 @@ function Login() {
                 <Form.Control.Feedback type="invalid">
                     Please enter valid password
                 </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group>
+                <Form.Check onChange={togglePersist} checked={persist} />
+                <Form.Text>Trust this device</Form.Text>
             </Form.Group>
             <br />
             <div className={!error ? "hidden" : "visible"}>

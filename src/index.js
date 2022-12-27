@@ -13,17 +13,20 @@ import Page404 from "./pages/404";
 import App from "./pages/App";
 import Settings from "./pages/Settings";
 
+import { AuthProvider } from './hooks/AuthProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Router>
-        <Routes>
-            <Route path="/" element={<Home />}> </Route>
-            <Route path="/app" element={<App />}> </Route>
-            <Route path="/settings" element={<Settings />}> </Route>
-            <Route path="*" element={<Page404 />}> </Route>
-        </Routes>
-    </Router>
+    <AuthProvider>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />}> </Route>
+                <Route path="/app" element={<App />}> </Route>
+                <Route path="/settings" element={<Settings />}> </Route>
+                <Route path="*" element={<Page404 />}> </Route>
+            </Routes>
+        </Router>
+    </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

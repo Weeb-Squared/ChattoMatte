@@ -6,7 +6,6 @@ import Agreement from '../components/Home/Agreement';
 import "./Home.scss"
 
 class Home extends React.Component {
-
     render() {
         return (
             <div id="componentsBox">
